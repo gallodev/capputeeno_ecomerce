@@ -1,0 +1,17 @@
+:root {
+  --logo-color: #5D5D6D;  
+  --search-bg: #F3F5F6;
+  --bg-orange: #DE3838;
+  --bg-primary: #DEDEDE;
+  --orange-low: #FFA585;
+  --text-dark: #737380;
+  --shapes-light: #F5F5FA;
+  --shapes-dark: #E9E9F0;
+  --divider-color: #DCE2E6;
+  --bold-text: #09090A;
+}
+
+body{
+  margin: 0;
+  box-sizing: border-box;
+}
