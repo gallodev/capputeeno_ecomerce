@@ -1,6 +1,5 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { DefaultProviders } from './components/DefaultProviders'
 import { Header } from './components/Header'
-import { FilterContextProvider } from './context/filterContext'
 import './globals.css'
 import { Saira } from 'next/font/google'
 
@@ -11,8 +10,6 @@ export const metadata = {
   description: 'Capputeeno e-commerce next.js',
 }
 
-const queryClient = new QueryClient()
-
 export default function RootLayout({
   children,
 }: {
@@ -20,11 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={saira.className}>
-          <FilterContextProvider>
-            <Header/>
-            {children}
-          </FilterContextProvider>
+      <body className={saira.className}>        
+        <DefaultProviders>
+          <Header/>
+          {children}    
+        </DefaultProviders>              
       </body>
     </html>
   )

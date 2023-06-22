@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { SearchIcon } from "../icons/SearchIcon"
+import { useFilter } from "../hooks/useFilter"
 
 const SearchContainer = styled.div`
     position: relative;
@@ -35,10 +36,11 @@ const SearchInput = styled.input`
 
 
 export function Search() {
+    const { handleSearch } = useFilter()
     return (
         <SearchContainer aria-label="Carrinho de compras">
             <div>
-                <SearchInput placeholder="Procurando por algo específico?"/>
+                <SearchInput placeholder="Procurando por algo específico?" onChange={(e) => handleSearch(e.target.value)}/>
                 <SearchIcon/>
             </div>
         </SearchContainer>

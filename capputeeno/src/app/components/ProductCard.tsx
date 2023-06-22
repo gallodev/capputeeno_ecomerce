@@ -1,13 +1,9 @@
 'use client'
 
 import styled from "styled-components";
-
-interface Product {
-    id: string;
-    name: string;
-    price_in_cents: string;
-    image_url: string;
-}
+import { Product } from "../types/Product";
+import { formatPrice } from "../utils/format-price";
+import { useRouter } from 'next/navigation';
 
 
 const Container = styled.div`
@@ -15,6 +11,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;    
+    cursor: pointer;
 
     img {
         height: 300px;
@@ -59,13 +56,20 @@ const Container = styled.div`
 
 
 export function ProductCard(props: Product) {
+    const router = useRouter()
+    const price = formatPrice(props.price_in_cents)
+
+    const handleNavigate = () => {
+        return router.push(`product?id=${props.id}`)
+    }
+
     return (
-        <Container>
+        <Container onClick={handleNavigate}>
             <img src={props.image_url} alt={props.name} />   
             <div>
                 <h3>{props.name}</h3>   
                 <div/>
-                <span>R${props.price_in_cents}</span>
+                <span>{price}</span>
             </div>
         </Container>
     )
