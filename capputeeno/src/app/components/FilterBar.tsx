@@ -6,8 +6,12 @@ import { OrderFilter } from "./OrderFilter"
 
 const Container = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: inherit;
     align-items: center;    
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+        justify-content: space-between;
+    }
 `
 
 export function FilterBar() {

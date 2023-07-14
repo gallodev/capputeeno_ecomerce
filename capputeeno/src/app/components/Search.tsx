@@ -26,12 +26,17 @@ const SearchInput = styled.input`
     background-color: var(--search-bg);
     border-radius: 8px;
     border: 0;
-    width: 352px;
+    width: 220px;
 
     font-family: inherit;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 22px;
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+        width: 352px;
+        font-size: 14px;
+    }
 `
 
 

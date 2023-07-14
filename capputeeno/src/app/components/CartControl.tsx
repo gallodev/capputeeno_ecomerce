@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { CartIcon } from "../icons/CartIcon";
+import { useRouter } from "next/navigation";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { ProductInCart } from "../types/Product";
+import { useEffect, useState } from "react";
 
 const CartContainer = styled.button`
     display: flex;
@@ -34,10 +38,17 @@ const CartBallon = styled.div`
 
 
 export function CartControl() {
+    const router = useRouter();
+    const { value } = useLocalStorage<ProductInCart[]>('cart-items',[])
+
+    const handleNavigate = () => {
+        return router.push('/cart')
+    }
+    
     return (
-        <CartContainer>            
+        <CartContainer onClick={handleNavigate}>            
             <CartIcon/>
-            <CartBallon>2</CartBallon>
+            {value.length > 0 && <CartBallon>{value.length}</CartBallon>}
         </CartContainer>
     )
 }

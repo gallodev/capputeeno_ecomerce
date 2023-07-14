@@ -13,7 +13,12 @@ const FilterList = styled.ul`
     display: flex;
     justify-content: flex-start;
     padding: 0;
-    gap: 40px;
+    gap: 8px;
+
+    @media(min-width: ${props => props.theme.desktopBreakpoint}) {
+        gap: 40px;
+    }
+
 `
 
 const FilterItem = styled.li<FilterItemProps>`
@@ -22,8 +27,13 @@ const FilterItem = styled.li<FilterItemProps>`
 
     font-weight: ${props => props.selected ? '600' : '400'};
     border-bottom: ${props => props.selected ? '4px solid var(--orange-low)' : ''};
-    font-size: 16px;
+    font-size: 12px;
     line-height: 22px;
+
+    @media(min-width: ${props => props.theme.desktopBreakpoint}) {
+        font-size: 16px;
+    }
+
 `
 
 

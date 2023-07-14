@@ -12,7 +12,7 @@ const queryClient = new QueryClient()
 
 const theme = {
     desktopBreakpoint: "968px",
-    tableBreakpoint: "768px",
+    tabletBreakpoint: "768px",
 }
 
 export function DefaultProviders({children}: DefaultProvidersProps) {

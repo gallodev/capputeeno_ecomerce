@@ -11,19 +11,26 @@ const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 20px;
+    padding: 0 5px;
 
-    @media(min-width: 1000px) {
+    @media(min-width: ${props => props.theme.desktopBreakpoint}) {
         padding: 0 160px;
     }
 `
 
 const Logo = styled.a`
-    font-size: 40px;
-    line-height: 150%;
+    font-size: 20px;
+    line-height: 120%;
     color: var(--logo-color);
     text-transform: lowercase;
     padding: 20px 0;
+    margin-right: 5px;
+
+    @media(min-width: ${props => props.theme.desktopBreakpoint}) {
+        font-size: 40px;
+        line-height: 150%;
+        margin-right: 0;
+    }
 `
 
 

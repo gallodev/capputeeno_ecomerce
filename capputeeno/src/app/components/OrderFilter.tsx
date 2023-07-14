@@ -15,25 +15,38 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     position: relative;
+    font-size: 12px;
+    margin-left: 20px;
 
     button {
         background-color: transparent;
         border: 0;
         cursor: pointer;
     }
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+        font-size: 16px;
+        margin-left: 0;
+    }
 `
 
 const SelectBox = styled.ul`
     position: absolute;
     top: 100%;
-    background-color: #FFFFFF;
-    width: 175px;
+    background-color: #FFFFFF;    
     height: 100px;
     list-style: none;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     margin: 0;
-    padding: 12px 16px;
+    padding: 12px 16px; 
+    right: 4px;   
+    width: 120px;
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+        right: 0;
+        width: 175px;
+    }
 
     li {
         cursor: pointer;
